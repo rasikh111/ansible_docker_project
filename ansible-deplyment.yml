@@ -1,5 +1,5 @@
 ---
-- hosts: docker
+- hosts: localhost
   gather_facts: false
   remote_user: root
   tasks:
@@ -8,7 +8,7 @@
         src: /root/.jenkins/workspace/Myjob_github_ansible_docker/
         dest: /home/aadmin/myproject/projects
         mode: pull
-- hosts: ansible
+- hosts: localhost
   gather_facts: false
   remote_user: root
   tasks:
