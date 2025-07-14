@@ -1,11 +1,11 @@
 ---
-- hosts: localhost
+- hosts: docker
   gather_facts: false
   remote_user: root
   tasks:
     - name: Fetch files from the remote server
       synchronize:
-        src: /root/.jenkins/workspace/Myjob_github_ansible_docker/
+        src: /var/lib/jenkins/workspace/Myjob_github_ansible_docker
         dest: /home/ubuntu/project
         mode: pull
 - hosts: docker
