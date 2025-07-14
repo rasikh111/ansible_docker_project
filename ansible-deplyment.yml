@@ -8,7 +8,7 @@
         src: /root/.jenkins/workspace/Myjob_github_ansible_docker/
         dest: /home/ubuntu/project
         mode: pull
-- hosts: localhost
+- hosts: docker
   gather_facts: false
   remote_user: root
   tasks:
