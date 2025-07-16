@@ -1,13 +1,4 @@
 ---
-- hosts: localhost
-  gather_facts: false
-  become: yes
-  tasks:
-    - name: Fetch files from the remote server
-      synchronize:
-        src: /var/lib/jenkins/workspace/Myjob_github_ansible_docker
-        dest: /home/ubuntu/project
-        mode: pull
 - hosts: docker
   gather_facts: false
   become: yes
@@ -32,7 +23,7 @@
       source: build
       name: nginx_image:v1
       build:
-        path: /home/ubuntu/project
+        path: /home/ubuntu/project/ansible_docker_project
       state: present
   
   - name: Creating the container and start
